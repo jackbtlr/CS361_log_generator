@@ -1,0 +1,5 @@
+#Ignore the venv folder
+venv/
+
+# Ignore workspace preferences
+.idea/workspace.xml
