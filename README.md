@@ -50,3 +50,6 @@ Body:
 | Program2 |    Failure     |   :(    |
 
 When request is sent from browser, file will automatically be downloaded. When sending a request from another program, write the response body to a file using the value of response.headers["Filename"].
+
+### UML Diagram:
+![](UML_diagram.png)
