@@ -3,3 +3,6 @@ venv/
 
 # Ignore workspace preferences
 .idea/workspace.xml
+
+# Ignore log files
+log_files/
