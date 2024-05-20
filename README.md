@@ -34,9 +34,9 @@ POST request to /log_generator
 ```
 Response
 * logfile_YYYYMMDD_HHMMSS.csv:
-```
-Program,Install Status,Message
-Program1,Success,<3
-Program1,Failure,:(
-```
+
+| Program  | Install Status | Message |
+|:--------:|:--------------:|:-------:|
+| Program1 |    Success     |   <3   |
+| Program2 |    Failure     |   :(    |
 
