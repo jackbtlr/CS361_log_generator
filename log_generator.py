@@ -21,9 +21,13 @@ def generate_log_file():
         file.write('Program,Install Status,Message\n')
         for i in range(len(logs)):
             file.write(f'{logs[i][0]},{logs[i][1]},{logs[i][2]}\n')
-    return send_from_directory(
+
+    resp = send_from_directory(
         log_folder, f'logfile_{timestamp}.csv', as_attachment=True
     )
+    resp.headers['Filename'] = f'logfile_{timestamp}.csv'
+
+    return resp
 
 if __name__ == '__main__':
     app.run()

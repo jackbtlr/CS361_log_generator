@@ -26,17 +26,27 @@ This is a python based api endpoint using flask. To run the server make sure you
 ## API Endpoints
 * GET /generate_log: Accepts a Json object with a key of "logs". The value of of the key should be a list of lists. Each child list represents a log entry with the format of [<ProgramName>, <Status>, <Message>]. The endpoint will return a comma-separated values (.csv) file containing all the information in the request.
 ### Example
-POST request to /log_generator
+#### Request
+POST request to /generate_log
+
+Params:
 ```
 {
-    "logs": [['Program1', 'Success', '<3'], ['Program2', 'Failure', ':(']]]
+    "logs": [["Program1", "Success", "<3"], ["Program2", "Failure", ":("]]
 }
 ```
-Response
-* logfile_YYYYMMDD_HHMMSS.csv:
+#### Response
+Headers:
+```
+{
+   "Filename": "logfile_[YYYYMMDD]_[HHMMSS].csv"
+}
+```
+Body:
 
 | Program  | Install Status | Message |
 |:--------:|:--------------:|:-------:|
 | Program1 |    Success     |   <3   |
 | Program2 |    Failure     |   :(    |
 
+When request is sent from browser, file will automatically be downloaded. When sending a request from another program, write the response body to a file using the value of response.headers["Filename"].
